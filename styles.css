@@ -1834,3 +1834,66 @@ section {
   text-align: center;
   margin-top: 20px;   
 }
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.highlight {
+  color: #2563eb;
+}
+
+.animacao {
+  display: inline-block;
+  height: 5rem;
+  width: 30rem; /* Aumentei a largura para acomodar a frase mais longa */
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.animacao span {
+  display: block;
+  line-height: 5rem;
+  animation: troca 8s infinite;
+}
+
+@keyframes troca {
+  /* Os valores de translateY foram ajustados para a nova altura de linha */
+  0%, 15% {
+    transform: translateY(0);
+  }
+  
+  17.5% {
+    transform: translateY(-5.5rem);
+  }
+  20%, 35% {
+    transform: translateY(-5rem);
+  }
+  
+  37.5% {
+    transform: translateY(-11rem);
+  }
+  40%, 55% {
+    transform: translateY(-10rem);
+  }
+  
+  57.5% {
+    transform: translateY(-16rem);
+  }
+  60%, 75% {
+    transform: translateY(-15rem);
+  }
+  
+  77.5% {
+    transform: translateY(-21rem);
+  }
+  80%, 95% {
+    transform: translateY(-20rem);
+  }
+  
+  100% {
+    transform: translateY(0);
+  }
+}
