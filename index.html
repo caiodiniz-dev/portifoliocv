@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/eu.jpg" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caio Diniz - Programador FullStack</title>
     <meta name="description" content="Portfólio profissional de Caio Diniz, programador ullStack especializado em desenvolvimento web moderno.">
@@ -16,7 +16,7 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-logo">
-                     <a href="#home">Caio Diniz | FullStack Developer!</a>
+                    <a href="#home">Caio Diniz | FullStack Developer!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -32,6 +32,10 @@
                         <a href="#contact" class="nav-link">Contato</a>
                     </li>
                 </ul>
+                <!-- Added dark mode toggle button -->
+                <button class="theme-toggle" id="themeToggle" title="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <div class="nav-toggle">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -45,23 +49,23 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-<h2 class="hero-title">
-    Olá, eu sou
-    <span class="animacao highlight">
-        <span>Caio Diniz</span>
-        <span>Desenvolvedor FrontEnd</span>
-        <span>Desenvolvedor BeckEnd</span>
-        <span>Criador de conteúdo</span>
-        <span>Criador de Projetos Digitais</span>
-    </span>
-</h2>
-                        
+                    <h2 class="hero-title">
+                        Olá, eu sou
+                        <span class="animacao highlight">
+                            <span>Caio Diniz</span>
+                            <span>Dev FrontEnd</span>
+                            <span>Dev BackEnd</span>
+                            <span>Criador de conteúdo</span>
+                            <span>Caio Diniz</span> 
+                        </span>
+                    </h2>
+
                     <p class="hero-description">
                         Sou Caio Diniz, programador apaixonado por tecnologia. Estudo programação desde os 10 anos e transformo ideias em sites modernos, funcionais e profissionais. Sempre busco aprender mais, explorar novas linguagens e criar soluções criativas que realmente façam a diferença.
                     </p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                        <a href="https://wa.me/5519994737425?text=Olá%20Caio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-secondary" target="_blank">
+                        <a href="https://wa.me/5519994737425?text=Olá%20Caio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-secondary">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                     </div>
@@ -88,15 +92,15 @@
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-description">
-                    Tenho 15 anos e programo desde os 10, aprendendo de forma autodidata com tutoriais e prática constante. Essa rotina despertou minha paixão por tecnologia, códigos e dados.
+                        Programo desde os 10, aprendendo de forma autodidata com tutoriais e prática constante. Essa rotina despertou minha paixão por tecnologia, códigos e dados.
                     </p>
 
                     <p class="about-description">
-                    Vejo cada projeto como chance de evoluir, criando sites modernos e funcionais enquanto busco sempre me superar.
+                        Vejo cada projeto como chance de evoluir, criando sites modernos e funcionais enquanto busco sempre me superar.
                     </p>
 
-                     <p class="about-description">
-                    Meu objetivo é continuar aprimorando minhas habilidades para atuar como programador profissional e gerar impacto real com tecnologia.
+                    <p class="about-description">
+                        Meu objetivo é continuar aprimorando minhas habilidades para atuar como programador profissional e gerar impacto real com tecnologia.
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
@@ -116,11 +120,10 @@
                         <a href="https://docs.google.com/document/d/1_3CIDasNcO2HzBqKouM5YM72md6QwJckOqqopUGbICg/edit?usp=sharing" target="_blank" class="btn btn-outline" id="downloadCV">
                             <i class="fas fa-download"></i>
                             Baixar Currículo
-                        
                         </a>
                     </div>
                 </div>
-                  <div class="skills-container">
+                <div class="skills-container">
                     <h3 class="skills-title">Domínios Técnicos</h3>
                     <div class="skills-grid">
                         <div class="skill-item">
@@ -129,7 +132,7 @@
                             </div>
                             <span class="skill-name">HTML5</span>
                             <div class="skill-bar">
-                               <div class="skill-progress" data-width="100%"></div>
+                                <div class="skill-progress" data-width="100%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -198,7 +201,7 @@
                                 <a href="https://caiodiniz-dev.github.io/Snitap/" target="_blank" class="project-link" title="Ver Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código" target="_blank">
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -207,7 +210,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Snitap</h3>
                         <p class="project-description">
-                            A Snitap é uma landing page projetada para a venda de patins. Com um layout minimalista e moderno, a página busca atrair um público interessado em esportes radicais e estilo de vida..
+                            A Snitap é uma landing page projetada para a venda de patins. Com um layout minimalista e moderno, a página busca atrair um público interessado em esportes radicais e estilo de vida.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
@@ -220,56 +223,57 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/proejto 2.jpg" alt="televram">
+                        <img src="assets/projeto 2.png" alt="televram">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://caiodiniz-dev.github.io/Travelgramm/" target="_blank" class="project-link" title="Ver Demo">
+                                <a href="https://caiodiniz-dev.github.io/MatrixTechh/" target="_blank" class="project-link" title="Ver Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código" target="_blank">
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Perfil de Viagens</h3>
+                        <h3 class="project-title">Tecnologia com tema de Matriz</h3>
                         <p class="project-description">
-                            perfil de um blog de viagens chamado Travelgram. A página é uma ótima representação de um portfólio de viagens, destacando a paixão e a experiência da autora.
+                            O site apresenta a história e a evolução da tecnologia, desde a Revolução Industrial até a Era Digital, destacando o impacto das inovações tecnológicas na sociedade. Além disso, conta com uma inteligência artificial integrada, permitindo que os usuários interajam e façam perguntas sobre temas relacionados à tecnologia.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JAVASCRIPT</span>
                             <span class="tech-tag">NODE.JS</span>
+                            <span class="tech-tag">JSON</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/projeto 3.jpg" alt="conversor de moeda">
+                        <img src="assets/projeto 3.png" alt="Aplicativo de agendamento de corte de cabelo">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href=" https://caiodiniz-dev.github.io/Conversor-de-moedas/" target="_blank" class="project-link" title="Ver Demo">
+                                <a href="https://caiodiniz-dev.github.io/AgendamentoBarbearia/" target="_blank" class="project-link" title="Ver Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código" target="_blank">
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Site de conversor de moedas</h3>
+                        <h3 class="project-title">Aplicativo de agendamento de corte de cabelo</h3>
                         <p class="project-description">
-                            Conversor de moedas online que permite transformar valores em Real para Dólar, Euro e Libra Esterlina de forma rápida e prática.
+                            O site permite agendar, visualizar e cancelar horários de forma simples e rápida. Integrado a um banco de dados, garante segurança, eficiência e controle em tempo real dos agendamentos.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">JAVASCRIPT</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">TYPESCRIPT</span>
+                            <span class="tech-tag">JSON</span>
                         </div>
                     </div>
                 </div>
@@ -317,7 +321,7 @@
                         <a href="https://www.linkedin.com/in/caio-diniz-ramos-596668384/" target="_blank" class="social-link" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/caiodiniz-dev" target="_blank" class="social-link" title="GitHub" target="_blank">
+                        <a href="https://github.com/caiodiniz-dev" target="_blank" class="social-link" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.tiktok.com/@caioddeveloper" target="_blank" class="social-link" title="Twitter">
@@ -326,7 +330,7 @@
                         <a href="https://www.instagram.com/caiovdramos/" target="_blank" class="social-link" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5519994737425" target="_blank" class="social-link" title="WhatsApp" target="_blank">
+                        <a href="https://wa.me/5519994737425" target="_blank" class="social-link" title="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -377,22 +381,21 @@
     </button>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js" defer></script>
     <script>
         function sendMessageToWhatsApp() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-        
+
             const whatsappMessage = `Olá Caio! Meu nome é ${name}.%0A%0AAssunto: ${subject}%0A%0AMensagem: ${message}%0A%0AMeu email para contato: ${email}`;
-            
-            const whatsappLink = `https://wa.me/5519994737425?text=${whatsappMessage} `;
-            
+
+            const whatsappLink = `https://wa.me/5519994737425?text=${whatsappMessage}`;
+
             window.open(whatsappLink, '_blank');
         }
-
-        
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
+</html>
