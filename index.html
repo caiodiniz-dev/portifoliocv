@@ -104,15 +104,15 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <span class="stat-number">25</span>
+                            <span class="stat-number">+50</span>
                             <span class="stat-label">Projetos Concluídos</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">4+</span>
+                            <span class="stat-number">5+</span>
                             <span class="stat-label">Anos de Experiência</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">5+</span>
+                            <span class="stat-number">7+</span>
                             <span class="stat-label">Linguagens de programação!</span>
                         </div>
                     </div>
@@ -126,58 +126,71 @@
                 <div class="skills-container">
                     <h3 class="skills-title">Domínios Técnicos</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
+                        <!-- Simplificando skills para mostrar apenas ícone, expandindo no hover -->
+                        <div class="skill-item" data-skill="HTML5" data-level="100%">
                             <div class="skill-icon">
                                 <i class="fab fa-html5"></i>
                             </div>
-                            <span class="skill-name">HTML5</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="100%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">HTML5</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="CSS3" data-level="100%">
                             <div class="skill-icon">
                                 <i class="fab fa-css3-alt"></i>
                             </div>
-                            <span class="skill-name">CSS3</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="100%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">CSS3</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="JavaScript" data-level="100%">
                             <div class="skill-icon">
                                 <i class="fab fa-js-square"></i>
                             </div>
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="100%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="Python" data-level="85%">
                             <div class="skill-icon">
                                 <i class="fab fa-python"></i>
                             </div>
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="Typescript" data-level="40%">
                             <div class="skill-icon">
                                 <i class="fab fa-react"></i>
                             </div>
-                            <span class="skill-name">Typescript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="40%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">Typescript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="40%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="Node.js" data-level="45%">
                             <div class="skill-icon">
                                 <i class="fab fa-node-js"></i>
                             </div>
-                            <span class="skill-name">Node.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="45%"></div>
+                            <div class="skill-details">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="45%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -285,7 +298,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Entre em Contato</h2>
-                <p class="section-subtitle">Vamos conversar sobre seu próximo projeto</p>
+                <p class="section-subtitle">Vamos conversar sobre seu próximo projeto!</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -381,8 +394,8 @@
     </button>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js" defer></script>
     <script>
         function sendMessageToWhatsApp() {
             const name = document.getElementById('name').value;
