@@ -66,6 +66,30 @@ body {
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+body.dark-mode .logo-light {
+  display: none;
+}
+
+body.dark-mode .logo-dark {
+  display: block;
 }
 
 .nav-logo a:hover {
@@ -195,6 +219,7 @@ body {
   display: block;
   margin-top: 0.5rem;
 }
+
 .animacao {
   display: inline-block;
   height: 6rem;
@@ -235,7 +260,7 @@ body {
   }
 
   57.5% {
-    transform: translateY(-18.5rem); 
+    transform: translateY(-18.5rem);
   }
   60%,
   75% {
@@ -1201,8 +1226,6 @@ body.dark-mode .form-label {
 
 body.dark-mode .form-input,
 body.dark-mode .form-textarea {
-  width: 100%;
-  padding: 12px 16px;
   background: var(--dark-card);
   color: var(--gray-100);
   border-color: #334155;
@@ -1212,6 +1235,7 @@ body.dark-mode .form-input:focus,
 body.dark-mode .form-textarea:focus {
   border-color: var(--purple);
   background: var(--dark-card);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
 }
 
 body.dark-mode .footer {
@@ -1232,6 +1256,41 @@ body.dark-mode .back-to-top:hover {
 
 body.dark-mode .nav-menu {
   background: var(--dark-card);
+}
+
+#downloadCV {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0;
+  padding: 12px 24px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+#downloadCV:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Modo escuro: roxo */
+body.dark-mode #downloadCV {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+body.dark-mode #downloadCV:hover {
+  background: var(--purple);
+  color: var(--white);
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -1569,6 +1628,7 @@ body.dark-mode .nav-menu {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
+
   .animacao {
     width: 100%;
     max-width: 18rem;
@@ -1617,4 +1677,26 @@ body.dark-mode .nav-menu {
       transform: translateY(0);
     }
   }
+}
+
+.logo-dark {
+  display: none;
+}
+
+.logo-light {
+  display: block;
+}
+
+body.dark-mode .logo-light {
+  display: none;
+}
+
+body.dark-mode .logo-dark {
+  display: block;
+}
+
+.logo-image {
+  width: 120px; 
+  height: auto;
+  transition: opacity 0.3s ease;
 }
