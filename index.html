@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caio Diniz - Programador FullStack</title>
-    <meta name="description" content="Portfólio profissional de Caio Diniz, programador ullStack especializado em desenvolvimento web moderno.">
+    <meta name="description" content="Portfólio profissional de Caio Diniz, programador FullStack especializado em desenvolvimento web moderno.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,21 +23,29 @@
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link">Início</a>
+                        <a href="#home" class="nav-link" data-pt="Início" data-en="Home">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">Sobre</a>
+                        <a href="#about" class="nav-link" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projetos</a>
+                        <a href="#projects" class="nav-link" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contato</a>
+                        <a href="#testimonials" class="nav-link" data-pt="Feedback" data-en="Feedback">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</a>
                     </li>
                 </ul>
-                <button class="theme-toggle" id="themeToggle" title="Alternar modo escuro">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <div class="header-controls">
+                    <button class="language-toggle" id="languageToggle" title="Traduzir para inglês">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" title="Alternar modo escuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
                 <div class="nav-toggle">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -52,23 +60,23 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h2 class="hero-title">
-                        Olá, eu sou
+                        <span class="greeting" data-pt="Olá, eu sou" data-en="Hello, I'm">Olá, eu sou</span>
                         <span class="animacao highlight">
-                            <span>Caio Diniz</span>
-                            <span>Dev FrontEnd</span>
-                            <span>Dev BackEnd</span>
-                            <span>Criador de conteúdo</span>
-                            <span>Caio Diniz</span> 
+                            <span data-pt="Caio Diniz" data-en="Caio Diniz">Caio Diniz</span>
+                            <span data-pt="Dev FrontEnd" data-en="FrontEnd Dev">Dev FrontEnd</span>
+                            <span data-pt="Dev BackEnd" data-en="BackEnd Dev">Dev BackEnd</span>
+                            <span data-pt="Criador de conteúdo" data-en="Content Creator">Criador de conteúdo</span>
+                            <span data-pt="Caio Diniz" data-en="Caio Diniz">Caio Diniz</span> 
                         </span>
                     </h2>
 
-                    <p class="hero-description">
+                    <p class="hero-description" data-pt="Sou Caio Diniz, programador apaixonado por tecnologia. Estudo programação desde os 10 anos e transformo ideias em sites modernos, funcionais e profissionais. Sempre busco aprender mais, explorar novas linguagens e criar soluções criativas que realmente façam a diferença." data-en="I'm Caio Diniz, a programmer passionate about technology. I've been studying programming since I was 10 years old and transform ideas into modern, functional and professional websites. I'm always seeking to learn more, explore new languages and create creative solutions that really make a difference.">
                         Sou Caio Diniz, programador apaixonado por tecnologia. Estudo programação desde os 10 anos e transformo ideias em sites modernos, funcionais e profissionais. Sempre busco aprender mais, explorar novas linguagens e criar soluções criativas que realmente façam a diferença.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                        <a href="#projects" class="btn btn-primary" data-pt="Ver Projetos" data-en="View Projects">Ver Projetos</a>
                         <a href="https://wa.me/5519994737425?text=Olá%20Caio!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
+                            <i class="fab fa-whatsapp"></i> <span data-pt="WhatsApp" data-en="WhatsApp">WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -88,45 +96,41 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">Conheça minha trajetória e habilidades</p>
+                <h2 class="section-title section-nav-link" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+                <p class="section-subtitle" data-pt="Conheça minha trajetória e habilidades" data-en="Get to know my journey and skills">
+                    Conheça minha trajetória e habilidades
+                </p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-description">
+                    <p class="about-description" data-pt="Programo desde os 10, aprendendo de forma autodidata com tutoriais e prática constante. Essa rotina despertou minha paixão por tecnologia, códigos e dados." data-en="I've been programming since I was 10, learning in a self-taught way with tutorials and constant practice. This routine awakened my passion for technology, code and data.">
                         Programo desde os 10, aprendendo de forma autodidata com tutoriais e prática constante. Essa rotina despertou minha paixão por tecnologia, códigos e dados.
                     </p>
 
-                    <p class="about-description">
+                    <p class="about-description" data-pt="Vejo cada projeto como chance de evoluir, criando sites modernos e funcionais enquanto busco sempre me superar." data-en="I see each project as a chance to evolve, creating modern and functional websites while always seeking to improve myself.">
                         Vejo cada projeto como chance de evoluir, criando sites modernos e funcionais enquanto busco sempre me superar.
                     </p>
 
-                    <p class="about-description">
+                    <p class="about-description" data-pt="Meu objetivo é continuar aprimorando minhas habilidades para atuar como programador profissional e gerar impacto real com tecnologia." data-en="My goal is to continue improving my skills to work as a professional programmer and generate real impact with technology.">
                         Meu objetivo é continuar aprimorando minhas habilidades para atuar como programador profissional e gerar impacto real com tecnologia.
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
                             <span class="stat-number">+50</span>
-                            <span class="stat-label">Projetos Concluídos</span>
+                            <span class="stat-label" data-pt="Projetos Concluídos" data-en="Projects Completed">Projetos Concluídos</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">5+</span>
-                            <span class="stat-label">Anos de Experiência</span>
+                            <span class="stat-label" data-pt="Anos de Experiência" data-en="Years of Experience">Anos de Experiência</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">6+</span>
-                            <span class="stat-label">Linguagens de programação!</span>
+                            <span class="stat-label" data-pt="Linguagens de programação!" data-en="Programming Languages!">Linguagens de programação!</span>
                         </div>
-                    </div>
-                    <div class="resume-download">
-                        <a href="https://docs.google.com/document/d/1_3CIDasNcO2HzBqKouM5YM72md6QwJckOqqopUGbICg/edit?usp=sharing" target="_blank" class="btn btn-outline" id="downloadCV">
-                            <i class="fas fa-download"></i>
-                            Baixar Currículo
-                        </a>
                     </div>
                 </div>
                 <div class="skills-container">
-                    <h3 class="skills-title">Domínios Técnicos</h3>
+                    <h3 class="skills-title" data-pt="Domínios Técnicos" data-en="Technical Domains">Domínios Técnicos</h3>
                     <div class="skills-grid">
                         <div class="skill-item" data-skill="HTML5" data-level="100%">
                             <div class="skill-icon">
@@ -199,7 +203,7 @@
                                 <i class="fas fa-language"></i>
                             </div>
                             <div class="skill-details">
-                                <span class="skill-name">Inglês</span>
+                                <span class="skill-name" data-pt="Inglês" data-en="English">Inglês</span>
                                 <div class="skill-bar">
                                     <div class="skill-progress" data-width="80%"></div>
                                 </div>
@@ -230,15 +234,22 @@
                     </div>
                 </div>
             </div>
+            <div class="botaocv">
+               <a href="https://docs.google.com/document/d/1_3CIDasNcO2HzBqKouM5YM72md6QwJckOqqopUGbICg/edit?usp=sharing" target="_blank" class="btn btn-outline btn-cv-center" id="downloadCV">
+                    <i class="fas fa-download"></i>
+                    <span data-pt="Baixar Currículo" data-en="Download Resume">Baixar Currículo</span>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Meus Projetos</h2>
-                <p class="section-subtitle">Alguns dos trabalhos que desenvolvi recentemente</p>
+                <h2 class="section-title section-nav-link" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</h2>
+                <p class="section-subtitle" data-pt="Alguns dos trabalhos que desenvolvi recentemente" data-en="Some of the work I've developed recently">Alguns dos trabalhos que desenvolvi recentemente</p>
             </div>
+
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
@@ -256,7 +267,7 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Snitap</h3>
-                        <p class="project-description">
+                        <p class="project-description" data-pt="A Snitap é uma landing page projetada para a venda de patins. Com um layout minimalista e moderno, a página busca atrair um público interessado em esportes radicais e estilo de vida." data-en="Snitap is a landing page designed for the sale of skates. With a minimalist and modern layout, the page seeks to attract an audience interested in extreme sports and lifestyle.">
                             A Snitap é uma landing page projetada para a venda de patins. Com um layout minimalista e moderno, a página busca atrair um público interessado em esportes radicais e estilo de vida.
                         </p>
                         <div class="project-tech">
@@ -267,10 +278,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/projeto 2.png" alt="televram">
+                        <img src="assets/projeto 2.png" alt="Matrix Tech">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://caiodiniz-dev.github.io/MatrixTechh/" target="_blank" class="project-link" title="Ver Demo">
@@ -283,9 +293,9 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Tecnologia com tema de Matriz</h3>
-                        <p class="project-description">
-                            O site apresenta a história e a evolução da tecnologia, desde a Revolução Industrial até a Era Digital, destacando o impacto das inovações tecnológicas na sociedade. Além disso, conta com uma inteligência artificial integrada, permitindo que os usuários interajam e façam perguntas sobre temas relacionados à tecnologia.
+                        <h3 class="project-title" data-pt="Tecnologia com tema de Matriz" data-en="Matrix-themed Technology">Tecnologia com tema de Matriz</h3>
+                        <p class="project-description" data-pt="O site apresenta a história e a evolução da tecnologia, desde a Revolução Industrial até a Era Digital, destacando o impacto das inovações tecnológicas na sociedade." data-en="The site presents the history and evolution of technology, from the Industrial Revolution to the Digital Age, highlighting the impact of technological innovations on society.">
+                            O site apresenta a história e a evolução da tecnologia, desde a Revolução Industrial até a Era Digital, destacando o impacto das inovações tecnológicas na sociedade.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
@@ -299,10 +309,10 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/projeto 3.png" alt="Aplicativo de agendamento de corte de cabelo">
+                        <img src="assets/projeto 3.png" alt="Agendamento de corte de cabelo">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://caiodiniz-dev.github.io/AgendamentoBarbearia/" target="_blank" class="project-link" title="Ver Demo">
+                                <a href="https://caiodiniz-dev.github.io/appzingen/" target="_blank" class="project-link" title="Ver Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                                 <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
@@ -312,15 +322,99 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Aplicativo de agendamento de corte de cabelo</h3>
-                        <p class="project-description">
-                            O site permite agendar, visualizar e cancelar horários de forma simples e rápida. Integrado a um banco de dados, garante segurança, eficiência e controle em tempo real dos agendamentos.
+                        <h3 class="project-title" data-pt="Landing page Zingen karaokê" data-en="Zingen karaoke landing page">Landing page Zingen karaokê</h3>
+                        <p class="project-description" data-pt="landing page para um aplicatio de musica, com opições de planos, responsivo para o mobile." data-en="Landing page for a music app, with plan options, responsive for mobile devices.">
+                            landing page para um aplicatio de musica, com opições de planos, responsivo para o mobile.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">JAVASCRIPT</span>
-                            <span class="tech-tag">CSS</span>
                             <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projeto 4.png" alt="ONG MPBIA">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://caiodiniz-dev.github.io/MPBIAmusica/" target="_blank" class="project-link" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ONG MPBIA</h3>
+                        <p class="project-description" data-pt="Site para ONG MPBIA, que ajuda crianças necessitadas e ensina sobre igualdade e cultura através da música." data-en="Website for MPBIA NGO, which helps children in need and teaches about equality and culture through music.">
+                            Site para ONG MPBIA, que ajuda crianças necessitadas e ensina sobre igualdade e cultura através da música.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">TYPESCRIPT</span>
                             <span class="tech-tag">JSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projeto 5.png" alt="Conversor de moedas">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://caiodiniz-dev.github.io/convert/" target="_blank" class="project-link" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-pt="Conversor de moedas" data-en="Currency Converter">Conversor de moedas</h3>
+                        <p class="project-description" data-pt="Site para conversão de moedas: real, dólar, euro e libra." data-en="Website for currency conversion: real, dollar, euro and pound.">
+                            Site para conversão de moedas: real, dólar, euro e libra.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JAVASCRIPT</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">NODE.JS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projeto 6.png" alt="BROUP manutenções">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://caiodiniz-dev.github.io/Broup/#services" target="_blank" class="project-link" title="Ver Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/caiodiniz-dev" target="_blank" class="project-link" title="Ver Código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">BROUP manutenções</h3>
+                        <p class="project-description" data-pt="Site para a BROUP manutenções, com informações sobre serviços, agendamento e redes sociais." data-en="Website for BROUP maintenance, with information about services, scheduling and social networks.">
+                            Site para a BROUP manutenções, com informações sobre serviços, agendamento e redes sociais.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JAVASCRIPT</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">NODE.JS</span>
                         </div>
                     </div>
                 </div>
@@ -328,21 +422,74 @@
         </div>
     </section>
 
+    <!-- Nova seção de Feedbacks - movida após os projetos -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title section-nav-link" data-pt="Feedbacks de Clientes" data-en="Client Feedbacks">Feedbacks de Clientes</h2>
+                <p class="section-subtitle" data-pt="O que meus clientes dizem sobre meu trabalho" data-en="What my clients say about my work">O que meus clientes dizem sobre meu trabalho</p>
+            </div>
+            <div class="testimonials-carousel">
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-card active">
+                        <img src="assets/Vitor diego.jpeg" alt="vitor" class="testimonial-avatar">
+                    <p class="testimonial-role" data-pt="Desenvolvedor Senior Engenharia de dados" data-en="Senior Data Engineering Developer">Desenvolvedor Senior Engenharia de dados</p>
+                        <h4 class="testimonial-name">Vitor Diego</h4>
+                        <p class="testimonial-text" data-pt="O domínio técnico do Caio é impressionante. Como desenvolvedor Full Stack, ele vai além da entrega de funcionalidades, priorizando arquiteturas sólidas e boas práticas. É raro encontrar um profissional jovem com tamanha maturidade técnica, combinando excelência em programação com foco e visão de inovação." data-en="Caio's technical expertise is impressive. As a Full Stack developer, he goes beyond simply delivering features, prioritizing solid architectures and best practices. It's rare to find a young professional with such technical maturity, combining programming excellence with a focus and vision for innovation.">
+                            O domínio técnico do Caio é impressionante. Como desenvolvedor Full Stack, ele vai além da entrega de funcionalidades, priorizando arquiteturas sólidas e boas práticas. É raro encontrar um profissional jovem com tamanha maturidade técnica, combinando excelência em programação com foco e visão de inovação.
+                        </p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="assets/allan.png" alt="allan" class="testimonial-avatar">
+                        <p class="testimonial-role" data-pt="CEO & Fundador do instituto MPBIA" data-en="CEO & Founder of the MPBIA Institute">CEO & Fundador do instituto MPBIA</p>
+                        <h4 class="testimonial-name">Allan Pevirgiladez</h4>
+                        <p class="testimonial-text" data-pt="Profissional extremamente dedicado, criativo e comprometido com a qualidade. Durante todo o desenvolvimento do meu projeto, demonstrou atenção minuciosa aos detalhes, compreensão das minhas necessidades e grande capacidade técnica. Cada etapa foi realizada com clareza, organização e cuidado, garantindo um resultado final muito acima do esperado. Além disso, a entrega foi feita dentro do prazo combinado e com um nível de excelência que realmente me surpreendeu. Estou muito satisfeito e recomendo o trabalho com total confiança.!" data-en="Extremely dedicated, creative, and committed to quality. Throughout the development of my project, he demonstrated meticulous attention to detail, understanding of my needs, and great technical skill. Each stage was carried out with clarity, organization, and care, guaranteeing a final result far exceeding expectations. Furthermore, the delivery was made within the agreed timeframe and with a level of excellence that truly surprised me. I am very satisfied and recommend his work with complete confidence.">
+                            Profissional extremamente dedicado, criativo e comprometido com a qualidade. Durante todo o desenvolvimento do meu projeto, demonstrou atenção minuciosa aos detalhes, compreensão das minhas necessidades e grande capacidade técnica. Cada etapa foi realizada com clareza, organização e cuidado, garantindo um resultado final muito acima do esperado. Além disso, a entrega foi feita dentro do prazo combinado e com um nível de excelência que realmente me surpreendeu. Estou muito satisfeito e recomendo o trabalho com total confiança.!
+                        </p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src=" laceholder.svg?height=60&width=60" alt="Beatriz Azevedo" class="testimonial-avatar">
+                    <p class="testimonial-role" data-pt="CEO & Fundador da TechStart" data-en="CEO & Founder of TechStart">CEO & Fundador da TechStart</p>
+                        <h4 class="testimonial-name">Beatriz Azevedo</h4>
+                        <p class="testimonial-text" data-pt="Excelente comunicação e resultados incríveis! O Caio transformou minhas ideias em realidade com um design impecável." data-en="Excellent communication and incredible results! Caio transformed my ideas into reality with impeccable design.">
+                            Excelente comunicação e resultados incríveis! O Caio transformou minhas ideias em realidade com um design impecável.
+                        </p>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="setCarousel(0)"></span>
+                <span class="dot" onclick="setCarousel(1)"></span>
+                <span class="dot" onclick="setCarousel(2)"></span>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Entre em Contato</h2>
-                <p class="section-subtitle">Vamos conversar sobre seu próximo projeto</p>
+                <h2 class="section-title section-nav-link" data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</h2>
+                <p class="section-subtitle" data-pt="Vamos conversar sobre seu próximo projeto" data-en="Let's talk about your next project">Vamos conversar sobre seu próximo projeto</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3 class="contact-title">Informações de Contato</h3>
+                    <h3 class="contact-title" data-pt="Informações de Contato" data-en="Contact Information">Informações de Contato</h3>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <span class="contact-label">Email</span>
+                            <span class="contact-label" data-pt="Email" data-en="Email">Email</span>
                             <span class="contact-value">cvdinizramos@gmail.com</span>
                         </div>
                     </div>
@@ -351,7 +498,7 @@
                             <i class="fab fa-whatsapp"></i>
                         </div>
                         <div class="contact-details">
-                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-label" data-pt="WhatsApp" data-en="WhatsApp">WhatsApp</span>
                             <span class="contact-value">+55 (19) 99473-7425</span>
                         </div>
                     </div>
@@ -360,48 +507,103 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <span class="contact-label">Localização</span>
-                            <span class="contact-value">Campinas, SP - Brasil</span>
+                            <span class="contact-label" data-pt="Localização" data-en="Location">Localização</span>
+                            <span class="contact-value">SP - Brasil</span>
                         </div>
                     </div>
+
+                    <!-- Adicionado mais informações abaixo dos dados de contato -->
+
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label" data-pt="Resposta" data-en="Response Time">Resposta</span>
+                            <span class="contact-value" data-pt="Geralmente em até 24 horas" data-en="Usually within 24 hours">Em até 24 horas!</span>
+                        </div>
+                    </div>
+
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/caio-diniz-ramos-596668384/" target="_blank" class="social-link" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/caio-diniz-ramos-596668384/" target="_blank" class="social-link" title="LinkedIn" data-tooltip="Venha conhecer meu LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/caiodiniz-dev" target="_blank" class="social-link" title="GitHub">
+                        <a href="https://github.com/caiodiniz-dev" target="_blank" class="social-link" title="GitHub" data-tooltip="Veja meus projetos no GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@caioddeveloper" target="_blank" class="social-link" title="Twitter">
+                        <a href="https://www.tiktok.com/@caioddeveloper" target="_blank" class="social-link" title="Twitter" data-tooltip="Me siga no TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://www.instagram.com/caiovdramos/" target="_blank" class="social-link" title="Instagram">
+                        <a href="https://www.instagram.com/caiovdramos/" target="_blank" class="social-link" title="Instagram" data-tooltip="Confira meu Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5519994737425" target="_blank" class="social-link" title="WhatsApp">
+                        <a href="https://wa.me/5519994737425" target="_blank" class="social-link" title="WhatsApp" data-tooltip="Fale comigo no WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Nome Completo</label>
-                        <input type="text" id="name" name="from_name" class="form-input" required>
+                <!-- Formulário de contato aprimorado com validações e animações 3D -->
+                <form class="contact-form contact-form-enhanced" id="contactForm">
+                    <div class="form-floating-container">
+                        <div class="form-3d-background"></div>
+                        <h3 class="form-title" data-pt="Envie sua Mensagem" data-en="Send Your Message">Envie sua Mensagem </h3>
+                        
+                        <div class="form-group form-group-animated">
+                            <label for="name" class="form-label" data-pt="Nome Completo *" data-en="Full Name *">Nome Completo *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="from_name" class="form-input" required minlength="3"  placeholder="Insira seu nome completo!">
+                                <span class="input-border"></span>
+                            </div>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group form-group-animated">
+                            <label for="email" class="form-label" data-pt="Email (Gmail) *" data-en="Email (Gmail) *">Email (Gmail) *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="from_email" class="form-input" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" placeholder="exemplo@gmail.com">
+                                <span class="input-border"></span>
+                            </div>
+                            <span class="error-message" id="email-error" data-pt="Por favor, use um email Gmail válido (@gmail.com)" data-en="Please use a valid Gmail address (@gmail.com)">Por favor, use um email Gmail válido (@gmail.com)</span>
+                        </div>
+                        
+                        <div class="form-group form-group-animated">
+                            <label for="phone" class="form-label" data-pt="Telefone *" data-en="Phone *">Telefone *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" name="phone" class="form-input" required pattern="[\+]?[\d\s$$$$\-]{10,}" placeholder="+55 (19) 99999-9999">
+                                <span class="input-border"></span>
+                            </div>
+                            <span class="error-message" id="phone-error" data-pt="Por favor, insira um telefone válido" data-en="Please enter a valid phone number">Por favor, insira um telefone válido</span>
+                        </div>
+                        
+                        <div class="form-group form-group-animated">
+                            <label for="subject" class="form-label" data-pt="Assunto *" data-en="Subject *">Assunto *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-tag input-icon"></i>
+                                <input type="text" id="subject" name="subject" class="form-input" required minlength="5"  placeholder="Qual projeto você deseja realizar?">
+                                <span class="input-border"></span>
+                            </div>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                        
+                        <div class="form-group form-group-animated">
+                            <label for="message" class="form-label" data-pt="Mensagem *" data-en="Message *">Mensagem *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment-dots input-icon"></i>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required minlength="20"  placeholder="Explique mais sobre o seu projeto!"></textarea>
+                                <span class="input-border"></span>
+                            </div>
+                            <span class="error-message" id="message-error" data-pt="A mensagem deve ter pelo menos 20 caracteres" data-en="Message must be at least 20 characters">A mensagem deve ter pelo menos 20 caracteres</span>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary btn-full btn-submit-animated" onclick="validateAndSendMessage()" data-pt-text="Enviar Mensagem" data-en-text="Send Message">
+                            <span class="btn-text" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane btn-icon"></i>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="from_email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Assunto</label>
-                        <input type="text" id="subject" name="subject" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Mensagem</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary btn-full" onclick="sendMessageToWhatsApp()">
-                        <span class="btn-text">Enviar Mensagem</span>
-                    </button>
                 </form>
             </div>
         </div>
@@ -411,13 +613,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; 2025 Caio Diniz. Todos os direitos reservados.</p>
+                    <p data-pt="&copy; 2025 Caio Diniz. Todos os direitos reservados." data-en="&copy; 2025 Caio Diniz. All rights reserved.">&copy; 2025 Caio Diniz. Todos os direitos reservados.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#home" class="footer-link">Início</a>
-                    <a href="#about" class="footer-link">Sobre</a>
-                    <a href="#projects" class="footer-link">Projetos</a>
-                    <a href="#contact" class="footer-link">Contato</a>
+                    <a href="#home" class="footer-link" data-pt="Início" data-en="Home">Início</a>
+                    <a href="#about" class="footer-link" data-pt="Sobre" data-en="About">Sobre</a>
+                    <a href="#projects" class="footer-link" data-pt="Projetos" data-en="Projects">Projetos</a>
+                    <a href="#testimonials" class="footer-link" data-pt="Feedback" data-en="Feedback">Feedback</a>
+                    <a href="#contact" class="footer-link" data-pt="Contato" data-en="Contact">Contato</a>
                 </div>
             </div>
         </div>
@@ -431,17 +634,111 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js" defer></script>
     <script>
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        
+        function moveCarousel(direction) {
+            testimonials[currentTestimonial].classList.remove('active');
+            dots[currentTestimonial].classList.remove('active');
+            
+            currentTestimonial += direction;
+            
+            if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            } else if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            }
+            
+            testimonials[currentTestimonial].classList.add('active');
+            dots[currentTestimonial].classList.add('active');
+        }
+        
+        function setCarousel(index) {
+            testimonials[currentTestimonial].classList.remove('active');
+            dots[currentTestimonial].classList.remove('active');
+            
+            currentTestimonial = index;
+            
+            testimonials[currentTestimonial].classList.add('active');
+            dots[currentTestimonial].classList.add('active');
+        }
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+        
+        function validateAndSendMessage() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+            
+            // Validar nome
+            if (name.length < 3) {
+                document.getElementById('name-error').textContent = 'Nome deve ter pelo menos 3 caracteres';
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('name-error').style.display = 'none';
+            }
+            
+            // Validar email Gmail
+            const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            if (!gmailPattern.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').style.display = 'none';
+            }
+            
+            // Validar telefone
+            const phonePattern = /[\+]?[\d\s$$$$\-]{10,}/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phone-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phone-error').style.display = 'none';
+            }
+            
+            // Validar assunto
+            if (subject.length < 5) {
+                document.getElementById('subject-error').textContent = 'Assunto deve ter pelo menos 5 caracteres';
+                document.getElementById('subject-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('subject-error').style.display = 'none';
+            }
+            
+            // Validar mensagem
+            if (message.length < 20) {
+                document.getElementById('message-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('message-error').style.display = 'none';
+            }
+            
+            if (isValid) {
+                const whatsappMessage = `Olá Caio! Meu nome é ${name}.%0A%0ATelefone: ${phone}%0A%0AAssunto: ${subject}%0A%0AMensagem: ${message}%0A%0AMeu email para contato: ${email}`;
+                const whatsappLink = `https://wa.me/5519994737425?text=${whatsappMessage}`;
+                window.open(whatsappLink, '_blank');
+            } else {
+                // Adicionar shake animation ao formulário
+                const form = document.getElementById('contactForm');
+                form.classList.add('shake-error');
+                setTimeout(() => {
+                    form.classList.remove('shake-error');
+                }, 500);
+            }
+        }
+        
+        // Função antiga mantida para compatibilidade
         function sendMessageToWhatsApp() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            const whatsappMessage = `Olá Caio! Meu nome é ${name}.%0A%0AAssunto: ${subject}%0A%0AMensagem: ${message}%0A%0AMeu email para contato: ${email}`;
-
-            const whatsappLink = `https://wa.me/5519994737425?text=${whatsappMessage}`;
-
-            window.open(whatsappLink, '_blank');
+            validateAndSendMessage();
         }
     </script>
 </body>
