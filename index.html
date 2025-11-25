@@ -116,11 +116,11 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <span class="stat-number">+50</span>
+                            <span class="stat-number">+20</span>
                             <span class="stat-label" data-pt="Projetos Concluídos" data-en="Projects Completed">Projetos Concluídos</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">5+</span>
+                            <span class="stat-number">3+</span>
                             <span class="stat-label" data-pt="Anos de Experiência" data-en="Years of Experience">Anos de Experiência</span>
                         </div>
                         <div class="stat-item">
@@ -422,7 +422,6 @@
         </div>
     </section>
 
-    <!-- Nova seção de Feedbacks - movida após os projetos -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -454,11 +453,11 @@
                     </div>
                     
                     <div class="testimonial-card">
-                        <img src=" laceholder.svg?height=60&width=60" alt="Beatriz Azevedo" class="testimonial-avatar">
-                    <p class="testimonial-role" data-pt="CEO & Fundador da TechStart" data-en="CEO & Founder of TechStart">CEO & Fundador da TechStart</p>
-                        <h4 class="testimonial-name">Beatriz Azevedo</h4>
-                        <p class="testimonial-text" data-pt="Excelente comunicação e resultados incríveis! O Caio transformou minhas ideias em realidade com um design impecável." data-en="Excellent communication and incredible results! Caio transformed my ideas into reality with impeccable design.">
-                            Excelente comunicação e resultados incríveis! O Caio transformou minhas ideias em realidade com um design impecável.
+                        <img src="assets/broup.png" alt="Nicolas Tavares" class="testimonial-avatar">
+                    <p class="testimonial-role" data-pt="Fundador da Broup manutenções" data-en="Founder of Broup maintenance">Fundador da Broup manutenções</p>
+                        <h4 class="testimonial-name">Nicolas Souza</h4>
+                        <p class="testimonial-text" data-pt="Caio demonstra dedicação, agilidade e senso de responsabilidade em tudo o que faz. Aprende rápido, busca sempre melhorar e entrega resultados com qualidade. Mostra iniciativa, organiza bem as tarefas e mantém uma postura madura mesmo enfrentando desafios. Seu comprometimento com o desenvolvimento pessoal e profissional é evidente, e ele está evoluindo de forma consistente." data-en="Caio demonstrates dedication, agility, and a sense of responsibility in everything he does. He learns quickly, always seeks to improve, and delivers quality results. He shows initiative, organizes tasks well, and maintains a mature attitude even when facing challenges. His commitment to personal and professional development is evident, and he is evolving consistently.">
+                            Caio demonstra dedicação, agilidade e senso de responsabilidade em tudo o que faz. Aprende rápido, busca sempre melhorar e entrega resultados com qualidade. Mostra iniciativa, organiza bem as tarefas e mantém uma postura madura mesmo enfrentando desafios. Seu comprometimento com o desenvolvimento pessoal e profissional é evidente, e ele está evoluindo de forma consistente.
                         </p>
                     </div>
                 </div>
@@ -512,8 +511,6 @@
                         </div>
                     </div>
 
-                    <!-- Adicionado mais informações abaixo dos dados de contato -->
-
 
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -541,9 +538,11 @@
                         <a href="https://wa.me/5519994737425" target="_blank" class="social-link" title="WhatsApp" data-tooltip="Fale comigo no WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
+                        <a href="https://www.youtube.com/@Caiodev-diniz" target="_blank" class="social-link" title="Youtube" data-tooltip="Me siga no Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- Formulário de contato aprimorado com validações e animações 3D -->
                 <form class="contact-form contact-form-enhanced" id="contactForm">
                     <div class="form-floating-container">
                         <div class="form-3d-background"></div>
@@ -664,7 +663,6 @@
             dots[currentTestimonial].classList.add('active');
         }
         
-        // Auto-rotate testimonials
         setInterval(() => {
             moveCarousel(1);
         }, 5000);
@@ -678,7 +676,6 @@
             
             let isValid = true;
             
-            // Validar nome
             if (name.length < 3) {
                 document.getElementById('name-error').textContent = 'Nome deve ter pelo menos 3 caracteres';
                 document.getElementById('name-error').style.display = 'block';
@@ -687,7 +684,6 @@
                 document.getElementById('name-error').style.display = 'none';
             }
             
-            // Validar email Gmail
             const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
             if (!gmailPattern.test(email)) {
                 document.getElementById('email-error').style.display = 'block';
@@ -696,7 +692,6 @@
                 document.getElementById('email-error').style.display = 'none';
             }
             
-            // Validar telefone
             const phonePattern = /[\+]?[\d\s$$$$\-]{10,}/;
             if (!phonePattern.test(phone)) {
                 document.getElementById('phone-error').style.display = 'block';
@@ -705,7 +700,6 @@
                 document.getElementById('phone-error').style.display = 'none';
             }
             
-            // Validar assunto
             if (subject.length < 5) {
                 document.getElementById('subject-error').textContent = 'Assunto deve ter pelo menos 5 caracteres';
                 document.getElementById('subject-error').style.display = 'block';
@@ -714,7 +708,6 @@
                 document.getElementById('subject-error').style.display = 'none';
             }
             
-            // Validar mensagem
             if (message.length < 20) {
                 document.getElementById('message-error').style.display = 'block';
                 isValid = false;
@@ -727,7 +720,6 @@
                 const whatsappLink = `https://wa.me/5519994737425?text=${whatsappMessage}`;
                 window.open(whatsappLink, '_blank');
             } else {
-                // Adicionar shake animation ao formulário
                 const form = document.getElementById('contactForm');
                 form.classList.add('shake-error');
                 setTimeout(() => {
@@ -736,10 +728,10 @@
             }
         }
         
-        // Função antiga mantida para compatibilidade
         function sendMessageToWhatsApp() {
             validateAndSendMessage();
         }
     </script>
 </body>
 </html>
+
