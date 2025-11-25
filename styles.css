@@ -412,7 +412,6 @@ body.dark-mode .logo-dark {
   }
 }
 
-/* Animação de rotação contínua para o círculo azul em volta da foto */
 .image-decoration {
   position: absolute;
   top: -20px;
@@ -488,7 +487,6 @@ body.dark-mode .image-decoration {
   margin-bottom: 1rem;
 }
 
-/* Cores azul/roxa para títulos das seções */
 .section-nav-link {
   color: var(--primary-color) !important;
   position: relative;
@@ -535,7 +533,6 @@ body.dark-mode .section-nav-link::after {
   gap: 1rem;
 }
 
-/* Botão de currículo centralizado na linha do subtítulo com animação de pulso */
 .btn-cv-center {
   margin-left: 2rem;
   animation: pulse-cv 2s ease-in-out infinite;
@@ -881,7 +878,6 @@ body.dark-mode .btn-cv-center:hover {
   flex-wrap: wrap;
 }
 
-/* Tooltips personalizados para ícones sociais */
 .social-link {
   display: flex;
   align-items: center;
@@ -956,7 +952,6 @@ body.dark-mode .btn-cv-center:hover {
   background: #333;
 }
 
-/* Seção de feedbacks com carrossel abaixo dos ícones sociais */
 .testimonials-section {
   margin-top: 3rem;
   padding: 2rem;
@@ -1095,7 +1090,6 @@ body.dark-mode .btn-cv-center:hover {
   transform: scale(1.2);
 }
 
-/* Dark mode para testimonials */
 body.dark-mode .testimonials-section {
   background: var(--dark-bg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -1132,7 +1126,6 @@ body.dark-mode .dot.active {
   background: var(--purple);
 }
 
-/* Formulário de contato aprimorado com background 3D e validações */
 .contact-form-enhanced {
   background: transparent;
   padding: 0;
@@ -1435,7 +1428,6 @@ body.dark-mode .back-to-top:hover {
   background: var(--purple-light);
 }
 
-/* Dark Mode Styles */
 body.dark-mode {
   background: var(--dark-bg);
   color: var(--gray-100);
@@ -1640,7 +1632,6 @@ body.dark-mode .social-link:hover {
   background: var(--purple-light);
 }
 
-/* Estilos responsivos aprimorados para celular */
 @media (max-width: 1024px) {
   .container {
     padding: 0 1.5rem;
@@ -2019,11 +2010,10 @@ body.dark-mode .social-link:hover {
  
 
 .botaocv {
-    margin-top: 2px; /* aumenta ou diminui como quiser */
-    text-align: center; /* se quiser deixar centralizado também */
+    margin-top: 2px;
+    text-align: center; 
 }
 
-/* Adding testimonial role styling below names */
 .testimonial-role {
   font-size: 0.9rem;
   color: var(--primary-color);
@@ -2036,7 +2026,6 @@ body.dark-mode .testimonial-role {
   color: var(--purple-light);
 }
 
-/* Testimonials section styling */
 .testimonials {
   padding: 6rem 0;
   background: var(--gray-50);
@@ -2073,7 +2062,7 @@ body.dark-mode .testimonial-role {
   padding: 2rem 1rem;
   opacity: 0;
   transform: translateX(100px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonial-card.active {
@@ -2173,7 +2162,6 @@ body.dark-mode .testimonial-role {
   transform: scale(1.2);
 }
 
-/* Dark mode for testimonials */
 body.dark-mode .testimonials {
   background: var(--dark-bg);
 }
