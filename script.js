@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (title === 'WhatsApp') {
           tooltipText = 'Entre em contato via WhatsApp'
         }
+        
       }
       
       link.setAttribute('data-tooltip', tooltipText)
