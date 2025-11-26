@@ -2062,7 +2062,7 @@ body.dark-mode .testimonial-role {
   padding: 2rem 1rem;
   opacity: 0;
   transform: translateX(100px);
-  transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 102s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonial-card.active {
