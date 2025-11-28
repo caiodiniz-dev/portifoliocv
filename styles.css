@@ -2062,7 +2062,7 @@ body.dark-mode .testimonial-role {
   padding: 2rem 1rem;
   opacity: 0;
   transform: translateX(100px);
-  transition: all 102s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 10s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonial-card.active {
@@ -2198,5 +2198,71 @@ body.dark-mode .dot.active {
   background: var(--purple);
 }
 
+.animacao {
+  display: inline-block;
+  height: 6rem;
+  width: 45rem;
+  overflow: hidden;
+  vertical-align: middle;
+  white-space: normal;
+}
 
+.animacao span {
+  display: block;
+  line-height: 6rem;
+  font-size: 4.5rem;
+  animation: troca 11s infinite;
+  white-space: nowrap;
+}
+
+@keyframes troca {
+  0%,
+  14% {
+    transform: translateY(0);
+  }
+  16.66% {
+    transform: translateY(-6rem);
+  }
+
+  16.66%,
+  30.66% {
+    transform: translateY(-6rem);
+  }
+  33.32% {
+    transform: translateY(-12rem);
+  }
+
+  33.32%,
+  47.32% {
+    transform: translateY(-12rem);
+  }
+  49.98% {
+    transform: translateY(-18rem);
+  }
+
+  49.98%,
+  63.98% {
+    transform: translateY(-18rem);
+  }
+  66.64% {
+    transform: translateY(-24rem);
+  }
+
+  66.64%,
+  80.64% {
+    transform: translateY(-24rem);
+  }
+  83.3% {
+    transform: translateY(-30rem);
+  }
+
+  83.3%,
+  97.3% {
+    transform: translateY(-30rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 
