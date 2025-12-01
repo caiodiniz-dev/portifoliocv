@@ -306,6 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+  
   init()
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
