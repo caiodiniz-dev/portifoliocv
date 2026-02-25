@@ -183,63 +183,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addSocialTooltips() {
-    const socialLinks = document.querySelectorAll('.social-link')
-    
-    socialLinks.forEach(link => {
-      const title = link.getAttribute('title')
-      let tooltipText = ''
-      
-      if (title === 'LinkedIn') {
-        tooltipText = 'Venha conhecer meu LinkedIn'
-      } else if (title === 'GitHub') {
-        tooltipText = 'Veja meus projetos no GitHub'
-      } else if (title === 'TikTok' || title === 'Twitter') {
-        tooltipText = 'Siga-me no TikTok'
-      } else if (title === 'Instagram') {
-        tooltipText = 'Me siga no Instagram'
-      } else if (title === 'WhatsApp') {
-        tooltipText = 'Entre em contato via WhatsApp'
+    const socialLinks = document.querySelectorAll(".social-link")
+
+    socialLinks.forEach((link) => {
+      const title = link.getAttribute("title")
+      let tooltipText = ""
+
+      if (title === "LinkedIn") {
+        tooltipText = "Venha conhecer meu LinkedIn"
+      } else if (title === "GitHub") {
+        tooltipText = "Veja meus projetos no GitHub"
+      } else if (title === "TikTok" || title === "Twitter") {
+        tooltipText = "Siga-me no TikTok"
+      } else if (title === "Instagram") {
+        tooltipText = "Me siga no Instagram"
+      } else if (title === "WhatsApp") {
+        tooltipText = "Entre em contato via WhatsApp"
       }
-      
-      link.setAttribute('data-tooltip', tooltipText)
+
+      link.setAttribute("data-tooltip", tooltipText)
     })
   }
 
   function updateSocialTooltips(language) {
-    const socialLinks = document.querySelectorAll('.social-link')
-    
-    socialLinks.forEach(link => {
-      const title = link.getAttribute('title')
-      let tooltipText = ''
-      
-      if (language === 'en') {
-        if (title === 'LinkedIn') {
-          tooltipText = 'Check out my LinkedIn'
-        } else if (title === 'GitHub') {
-          tooltipText = 'See my projects on GitHub'
-        } else if (title === 'TikTok' || title === 'Twitter') {
-          tooltipText = 'Follow me on TikTok'
-        } else if (title === 'Instagram') {
-          tooltipText = 'Follow me on Instagram'
-        } else if (title === 'WhatsApp') {
-          tooltipText = 'Contact me via WhatsApp'
+    const socialLinks = document.querySelectorAll(".social-link")
+
+    socialLinks.forEach((link) => {
+      const title = link.getAttribute("title")
+      let tooltipText = ""
+
+      if (language === "en") {
+        if (title === "LinkedIn") {
+          tooltipText = "Check out my LinkedIn"
+        } else if (title === "GitHub") {
+          tooltipText = "See my projects on GitHub"
+        } else if (title === "TikTok" || title === "Twitter") {
+          tooltipText = "Follow me on TikTok"
+        } else if (title === "Instagram") {
+          tooltipText = "Follow me on Instagram"
+        } else if (title === "WhatsApp") {
+          tooltipText = "Contact me via WhatsApp"
         }
       } else {
-        if (title === 'LinkedIn') {
-          tooltipText = 'Venha conhecer meu LinkedIn'
-        } else if (title === 'GitHub') {
-          tooltipText = 'Veja meus projetos no GitHub'
-        } else if (title === 'TikTok' || title === 'Twitter') {
-          tooltipText = 'Siga-me no TikTok'
-        } else if (title === 'Instagram') {
-          tooltipText = 'Me siga no Instagram'
-        } else if (title === 'WhatsApp') {
-          tooltipText = 'Entre em contato via WhatsApp'
+        if (title === "LinkedIn") {
+          tooltipText = "Venha conhecer meu LinkedIn"
+        } else if (title === "GitHub") {
+          tooltipText = "Veja meus projetos no GitHub"
+        } else if (title === "TikTok" || title === "Twitter") {
+          tooltipText = "Siga-me no TikTok"
+        } else if (title === "Instagram") {
+          tooltipText = "Me siga no Instagram"
+        } else if (title === "WhatsApp") {
+          tooltipText = "Entre em contato via WhatsApp"
         }
-        
       }
-      
-      link.setAttribute('data-tooltip', tooltipText)
+
+      link.setAttribute("data-tooltip", tooltipText)
     })
   }
 
@@ -261,7 +260,14 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach((element) => {
       const textContent = element.getAttribute(`data-${language}`)
 
-      if (element.tagName === "P" || element.tagName === "SPAN" || element.tagName === "A" || element.tagName === "H2" || element.tagName === "H3" || element.tagName === "LABEL") {
+      if (
+        element.tagName === "P" ||
+        element.tagName === "SPAN" ||
+        element.tagName === "A" ||
+        element.tagName === "H2" ||
+        element.tagName === "H3" ||
+        element.tagName === "LABEL"
+      ) {
         if (textContent && textContent.includes("&copy;")) {
           element.innerHTML = textContent
         } else if (textContent && (element.tagName === "P" || element.tagName === "LABEL")) {
@@ -273,7 +279,10 @@ document.addEventListener("DOMContentLoaded", () => {
               node.textContent = textContent
             }
           })
-          if (!element.textContent.trim() || element.textContent === element.getAttribute(`data-${language === "pt" ? "en" : "pt"}`)) {
+          if (
+            !element.textContent.trim() ||
+            element.textContent === element.getAttribute(`data-${language === "pt" ? "en" : "pt"}`)
+          ) {
             element.textContent = textContent
           }
         }
@@ -281,12 +290,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     document.title = language === "en" ? "Caio Diniz - FullStack Programmer" : "Caio Diniz - Programador FullStack"
-    document.querySelector('meta[name="description"]').setAttribute(
-      "content",
-      language === "en"
-        ? "Professional portfolio of Caio Diniz, a FullStack programmer specialized in modern web development."
-        : "Portfólio profissional de Caio Diniz, programador FullStack especializado em desenvolvimento web moderno."
-    )
+    document
+      .querySelector('meta[name="description"]')
+      .setAttribute(
+        "content",
+        language === "en"
+          ? "Professional portfolio of Caio Diniz, a FullStack programmer specialized in modern web development."
+          : "Portfólio profissional de Caio Diniz, programador FullStack especializado em desenvolvimento web moderno.",
+      )
 
     document.documentElement.lang = language
   }
@@ -306,8 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
-  
   init()
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -328,6 +337,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-
-
-
