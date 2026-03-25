@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector(".about-text")?.classList.add("slide-in-left")
     document.querySelector(".skills-container")?.classList.add("slide-in-right")
+    document.querySelector(".switch-container")?.classList.add("scale-in")
     document.querySelector(".contact-info")?.classList.add("slide-in-left")
     document.querySelector(".contact-form")?.classList.add("slide-in-right")
 
@@ -266,11 +267,17 @@ document.addEventListener("DOMContentLoaded", () => {
         element.tagName === "A" ||
         element.tagName === "H2" ||
         element.tagName === "H3" ||
-        element.tagName === "LABEL"
+        element.tagName === "LABEL" ||
+        element.tagName === "DIV"
       ) {
         if (textContent && textContent.includes("&copy;")) {
           element.innerHTML = textContent
-        } else if (textContent && (element.tagName === "P" || element.tagName === "LABEL")) {
+        } else if (textContent && (
+          element.tagName === "P" ||
+          element.tagName === "LABEL" ||
+          element.classList.contains("tooltip-text") ||
+          element.classList.contains("tooltip-title")
+        )) {
           element.textContent = textContent
         } else if (textContent) {
           const childNodes = Array.from(element.childNodes)
@@ -336,4 +343,62 @@ document.addEventListener("DOMContentLoaded", () => {
       updateSocialTooltips(currentLanguage)
     })
   }
+  // Função para configurar o personagem e animação em ambos os modos (light e dark)
+  function setupCharacterAnimation(characterId) {
+
+    const character = document.getElementById(characterId)
+    const dots = character?.closest('.nintendo-switch')?.querySelectorAll('.timeline-dot')
+
+    if (!character || !dots.length) return
+
+    let currentX = 0
+    let isMoving = false
+
+    dots.forEach((dot) => {
+      dot.addEventListener("mouseenter", () => {
+        const newX = dot.offsetLeft + (dot.offsetWidth / 2)
+
+        // 🔥 DEFINE DIREÇÃO
+        const direction = newX > currentX ? 1 : -1
+        character.style.setProperty("--dir", direction)
+
+        // 🔥 VIRA O PERSONAGEM
+        const computedStyle = getComputedStyle(character)
+        const scale = computedStyle.getPropertyValue('--scale').trim()
+
+        if (newX > currentX) {
+          character.style.transform = `translateX(-50%) scale(${scale}) scaleX(1)`
+        } else {
+          character.style.transform = `translateX(-50%) scale(${scale}) scaleX(-1)`
+        }
+
+        // 🔥 ATIVA ANIMAÇÃO
+        character.classList.add("walking")
+
+        isMoving = true
+
+        // 🔥 MOVIMENTO SUAVE
+        character.style.left = newX + "px"
+
+        // PARA ANIMAÇÃO DEPOIS
+        setTimeout(() => {
+          character.classList.remove("walking")
+          isMoving = false
+        }, 400)
+
+        currentX = newX
+      })
+    })
+
+    // 🔥 COMEÇA NA DIREITA (fora da imagem)
+    const startX = dots[dots.length - 1].offsetLeft
+    currentX = startX
+    character.style.left = startX + "px"
+  }
+
+  // ATIVA NOS DOIS MODOS
+  setupCharacterAnimation("character-light")
+  setupCharacterAnimation("character-dark")
+
+
 })
