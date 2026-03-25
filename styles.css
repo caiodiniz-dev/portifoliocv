@@ -2365,3 +2365,854 @@ body.dark-mode .dot.active {
     /* permite quebrar se precisar */
   }
 }
+
+/* ========================================
+   TRAJECTORY SECTION - NINTENDO SWITCH
+   ======================================== */
+
+.trajectory {
+  padding: 6rem 0;
+  background: var(--gray-50);
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.nintendo-switch {
+  position: relative;
+  display: block;
+  max-width: 950px;
+  width: 100%;
+}
+
+/* Hide dark switch by default */
+.switch-dark {
+  display: none;
+}
+
+/* Show blue switch in light mode, purple in dark mode */
+body.dark-mode .switch-light {
+  display: none;
+}
+
+body.dark-mode .switch-dark {
+  display: block;
+}
+
+/* Switch Image */
+.switch-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nintendo-switch:hover .switch-image {
+  transform: scale(1.10);
+}
+
+/* Overlay for dots */
+.switch-overlay {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  right: 20%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Walking Character */
+.timeline-path {
+  position: relative;
+  /* MUITO IMPORTANTE */
+}
+
+.walking-character {
+  position: absolute;
+  top: calc(50% - 10px);
+  /* posicionado embaixo das bolinhas */
+  left: 0;
+  transform: translateX(-50%) scale(0.25);
+  --scale: 0.25;
+  /* tamanho um pouco maior */
+  transform-origin: top center;
+  transition: left 0.15s ease-out;
+  z-index: 10;
+  animation: character-bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes character-bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) scale(0.25) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(0.25) translateY(-3px);
+  }
+}
+
+.character-dark .walking-character {
+  display: block;
+}
+
+.character-light .walking-character {
+  display: block;
+}
+
+.walking-character {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 400px;
+  /* 👈 começa mais pra direita */
+  transform: translateX(-50%) scale(0.25);
+  transition: left 0.1s linear;
+  z-index: 10;
+}
+
+.trajectory {
+  position: relative;
+}
+
+.character-body {
+  width: 24px;
+  height: 30px;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+}
+
+.timeline-dot {
+  position: relative;
+  cursor: pointer;
+}
+
+/* TOOLTIP */
+.dot-tooltip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+
+  opacity: 0;
+  pointer-events: none;
+  /* 🔥 CORREÇÃO DO BUG */
+
+  transition: 0.3s ease;
+  z-index: 20;
+}
+
+/* MOSTRAR TOOLTIP */
+.timeline-dot:hover .dot-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* PERSONAGEM */
+.walking-character {
+  position: absolute;
+  bottom: 20%;
+  /* 🔥 NÃO FICA MAIS NA IMAGEM */
+  left: 80%;
+  /* 🔥 COMEÇA NA DIREITA */
+  transform: translateX(-50%) scale(0.25);
+  transition: left 0.3s ease;
+
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* ANIMAÇÃO DE ANDAR 🔥 */
+.walking {
+  animation: walk 0.4s steps(2) infinite;
+}
+
+@keyframes walk {
+  0% {
+    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(-3px);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(0);
+  }
+}
+
+.switch-light .character-body {
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+}
+
+.switch-dark .character-body {
+  background: linear-gradient(145deg, #a855f7, #9333ea);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.5);
+}
+
+.character-body::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: -18px;
+  left: 2px;
+}
+
+.switch-light .character-body::before {
+  background: linear-gradient(145deg, #60a5fa, #3b82f6);
+}
+
+.switch-dark .character-body::before {
+  background: linear-gradient(145deg, #c084fc, #a855f7);
+}
+
+.character-legs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.leg {
+  width: 8px;
+  height: 14px;
+  background: #1e293b;
+  border-radius: 0 0 4px 4px;
+}
+
+.leg-left {
+  animation: leg-move-left 0.35s ease-in-out infinite;
+}
+
+.leg-right {
+  animation: leg-move-right 0.35s ease-in-out infinite;
+}
+
+@keyframes leg-move-left {
+
+  0%,
+  100% {
+    transform: rotate(-25deg);
+  }
+
+  50% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes leg-move-right {
+
+  0%,
+  100% {
+    transform: rotate(25deg);
+  }
+
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes walk-path-img {
+  0% {
+    left: 5%;
+  }
+
+  100% {
+    left: 85%;
+  }
+}
+
+/* Timeline Path */
+.timeline-path {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-path::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.switch-light .timeline-path::before {
+  background: linear-gradient(90deg, #93c5fd, #2563eb, #1d4ed8);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.switch-dark .timeline-path::before {
+  background: linear-gradient(90deg, #c084fc, #9333ea, #7c3aed);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+}
+
+/* Timeline Dots */
+.timeline-dot {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.dot-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.switch-light .dot-marker {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+}
+
+.switch-dark .dot-marker {
+  background: linear-gradient(145deg, #a855f7, #9333ea);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.5);
+}
+
+.dot-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.timeline-dot:hover .dot-marker {
+  transform: scale(1.5);
+}
+
+.switch-light .timeline-dot:hover .dot-marker {
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.8), 0 0 60px rgba(37, 99, 235, 0.4);
+}
+
+.switch-dark .timeline-dot:hover .dot-marker {
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.4);
+}
+
+/* Enhanced Tooltip */
+.dot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(15px) scale(0.95);
+  width: 280px;
+  padding: 0;
+  border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.switch-light .dot-tooltip {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  box-shadow: 0 20px 60px rgba(30, 58, 138, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-dark .dot-tooltip {
+  background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%);
+  box-shadow: 0 20px 60px rgba(88, 28, 135, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.dot-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.switch-light .dot-tooltip::before {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6, #2563eb);
+}
+
+.switch-dark .dot-tooltip::before {
+  background: linear-gradient(90deg, #c084fc, #a855f7, #9333ea);
+}
+
+.dot-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 12px solid transparent;
+}
+
+.switch-light .dot-tooltip::after {
+  border-top-color: #1d4ed8;
+}
+
+.switch-dark .dot-tooltip::after {
+  border-top-color: #7c3aed;
+}
+
+.timeline-dot:hover .dot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Tooltip Header */
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.switch-light .tooltip-year {
+  background: rgba(96, 165, 250, 0.3);
+  color: #bfdbfe;
+}
+
+.switch-dark .tooltip-year {
+  background: rgba(192, 132, 252, 0.3);
+  color: #e9d5ff;
+}
+
+.tooltip-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Tooltip Text */
+.tooltip-text {
+  padding: 12px 20px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Tooltip Tag */
+.tooltip-tag {
+  display: inline-block;
+  margin: 0 20px 16px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+.switch-light .tooltip-tag {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+.switch-dark .tooltip-tag {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  color: #fff;
+}
+
+/* Adjust tooltip position for edge dots */
+.timeline-dot:first-child .dot-tooltip {
+  left: 0;
+  transform: translateX(0) translateY(15px) scale(0.95);
+}
+
+.timeline-dot:first-child:hover .dot-tooltip {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.timeline-dot:first-child .dot-tooltip::after {
+  left: 25px;
+  transform: none;
+}
+
+.timeline-dot:last-child .dot-tooltip {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(15px) scale(0.95);
+}
+
+.timeline-dot:last-child:hover .dot-tooltip {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.timeline-dot:last-child .dot-tooltip::after {
+  left: auto;
+  right: 25px;
+  transform: none;
+}
+
+/* Trajectory Hint */
+.trajectory-hint {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  font-weight: 500;
+  animation: pulse-hint 2s ease-in-out infinite;
+}
+
+@keyframes pulse-hint {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* Dark Mode - Trajectory */
+body.dark-mode .trajectory {
+  background: var(--dark-card);
+}
+
+body.dark-mode .trajectory-hint {
+  color: var(--gray-300);
+}
+
+/* ========================================
+   RESPONSIVE - NINTENDO SWITCH
+   ======================================== */
+
+@media (max-width: 900px) {
+  .nintendo-switch {
+    max-width: 750px;
+  }
+
+  .dot-tooltip {
+    width: 240px;
+  }
+
+  .tooltip-header {
+    padding: 14px 16px 10px;
+  }
+
+  .tooltip-text {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  .tooltip-tag {
+    margin: 0 16px 14px;
+  }
+
+  .dot-marker {
+    width: 24px;
+    height: 24px;
+  }
+
+  .walking-character {
+    top: calc(50% + 30px);
+    transform: translateX(-50%) scale(0.22);
+    --scale: 0.22;
+  }
+
+  @keyframes character-bounce {
+
+    0%,
+    100% {
+      transform: translateX(-50%) scale(0.22) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) scale(0.22) translateY(-3px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nintendo-switch {
+    max-width: 600px;
+  }
+
+  .dot-tooltip {
+    width: 200px;
+    bottom: calc(100% + 15px);
+  }
+
+  .tooltip-header {
+    padding: 12px 14px 8px;
+    gap: 8px;
+  }
+
+  .tooltip-year {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .tooltip-title {
+    font-size: 0.85rem;
+  }
+
+  .tooltip-text {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .tooltip-tag {
+    margin: 0 14px 12px;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+  }
+
+  .dot-marker {
+    width: 20px;
+    height: 20px;
+    border-width: 3px;
+  }
+
+  .walking-character {
+    top: calc(50% + 25px);
+    transform: translateX(-50%) scale(0.18);
+    --scale: 0.18;
+  }
+
+  @keyframes character-bounce {
+
+    0%,
+    100% {
+      transform: translateX(-50%) scale(0.18) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) scale(0.18) translateY(-2px);
+    }
+  }
+
+  .trajectory-hint {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nintendo-switch {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .switch-overlay {
+    left: 18%;
+    right: 18%;
+  }
+
+  .dot-tooltip {
+    width: 160px;
+    bottom: calc(100% + 12px);
+  }
+
+  .tooltip-header {
+    padding: 10px 12px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .tooltip-year {
+    font-size: 0.6rem;
+  }
+
+  .tooltip-title {
+    font-size: 0.75rem;
+  }
+
+  .tooltip-text {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+
+  .tooltip-tag {
+    margin: 0 12px 10px;
+    padding: 3px 8px;
+    font-size: 0.6rem;
+  }
+
+  .dot-marker {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+
+  .dot-marker::after {
+    width: 4px;
+    height: 4px;
+  }
+
+  .walking-character {
+    top: calc(50% + 20px);
+    transform: translateX(-50%) scale(0.14);
+    --scale: 0.14;
+  }
+
+  @keyframes character-bounce {
+
+    0%,
+    100% {
+      transform: translateX(-50%) scale(0.14) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) scale(0.14) translateY(-2px);
+    }
+  }
+
+  .trajectory {
+    padding: 4rem 0;
+  }
+
+  .trajectory-hint {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .switch-overlay {
+    left: 15%;
+    right: 15%;
+  }
+
+  .dot-tooltip {
+    width: 140px;
+  }
+
+  .dot-marker {
+    width: 14px;
+    height: 14px;
+  }
+
+  .walking-character {
+    top: calc(50% + 15px);
+    transform: translateX(-50%) scale(0.12);
+    --scale: 0.12;
+  }
+
+  @keyframes character-bounce {
+
+    0%,
+    100% {
+      transform: translateX(-50%) scale(0.12) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) scale(0.12) translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+    /* 🔥 AUMENTEI */
+  }
+
+  .animacao.highlight span {
+    font-size: 2rem;
+    /* 🔥 maior e bonito */
+    white-space: normal;
+  }
+}
+
+/* ========================= */
+/* 📱 CELULAR */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+    /* 🔥 NÃO deixa minúsculo */
+  }
+
+  .animacao.highlight span {
+    font-size: 1.6rem;
+    /* 🔥 agora fica top */
+    white-space: normal;
+  }
+}
+
+.walking-character {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  --scale: 0.25;
+  --dir: 1;
+  /* Mantém o estado da direção */
+
+  /* O segredo: usamos as variáveis para não perder o estado */
+  transform: translateY(-50%) translateX(-50%) scale(var(--scale)) scaleX(var(--dir));
+
+  transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s ease;
+  z-index: 10;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 480px) {
+  .walking-character {
+    --scale: 0.14;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skill-item {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove aquele brilho azul ao tocar */
+  }
+}
+
+/* Aplica o efeito de aumentar APENAS em computadores */
+@media (hover: hover) {
+  .skill-item:hover {
+    transform: scale(1.05);
+    /* Ou o valor que você estiver usando */
+  }
+}
+
+/* No celular, você pode optar por um efeito mais sutil ou nenhum */
+@media (hover: none) {
+  .skill-item:active {
+    transform: scale(1);
+    /* Mantém o tamanho original ao tocar */
+  }
+}
