@@ -260,9 +260,7 @@ body.dark-mode .logo-dark {
 .animacao {
   display: inline-block;
   min-height: 6rem;
-  /* em vez de height */
   width: 100%;
-  /* nunca use largura fixa */
   overflow: hidden;
   vertical-align: middle;
 }
@@ -271,7 +269,6 @@ body.dark-mode .logo-dark {
   display: block;
   font-size: clamp(32px, 10vw, 72px);
   line-height: 1.1;
-  /* remove o 6rem fixo */
   animation: troca 8s infinite;
   white-space: nowrap;
 }
@@ -2362,13 +2359,8 @@ body.dark-mode .dot.active {
   .animacao span {
     font-size: 42px;
     white-space: normal;
-    /* permite quebrar se precisar */
   }
 }
-
-/* ========================================
-   TRAJECTORY SECTION - NINTENDO SWITCH
-   ======================================== */
 
 .trajectory {
   padding: 6rem 0;
@@ -2389,13 +2381,12 @@ body.dark-mode .dot.active {
   width: 100%;
 }
 
-/* Hide dark switch by default */
-.switch-dark {
+Hide dark switch by default .switch-dark {
   display: none;
 }
 
-/* Show blue switch in light mode, purple in dark mode */
-body.dark-mode .switch-light {
+Show blue switch in light mode,
+purple in dark mode body.dark-mode .switch-light {
   display: none;
 }
 
@@ -2403,8 +2394,7 @@ body.dark-mode .switch-dark {
   display: block;
 }
 
-/* Switch Image */
-.switch-image {
+Switch Image .switch-image {
   width: 100%;
   height: auto;
   display: block;
@@ -2415,8 +2405,7 @@ body.dark-mode .switch-dark {
   transform: scale(1.10);
 }
 
-/* Overlay for dots */
-.switch-overlay {
+Overlay for dots .switch-overlay {
   position: absolute;
   top: 15%;
   left: 20%;
@@ -2427,20 +2416,16 @@ body.dark-mode .switch-dark {
   justify-content: center;
 }
 
-/* Walking Character */
-.timeline-path {
+Walking Character .timeline-path {
   position: relative;
-  /* MUITO IMPORTANTE */
 }
 
 .walking-character {
   position: absolute;
   top: calc(50% - 10px);
-  /* posicionado embaixo das bolinhas */
   left: 0;
   transform: translateX(-50%) scale(0.25);
   --scale: 0.25;
-  /* tamanho um pouco maior */
   transform-origin: top center;
   transition: left 0.15s ease-out;
   z-index: 10;
@@ -2471,7 +2456,6 @@ body.dark-mode .switch-dark {
   position: absolute;
   top: calc(50% - 20px);
   left: 400px;
-  /* 👈 começa mais pra direita */
   transform: translateX(-50%) scale(0.25);
   transition: left 0.1s linear;
   z-index: 10;
@@ -2493,8 +2477,7 @@ body.dark-mode .switch-dark {
   cursor: pointer;
 }
 
-/* TOOLTIP */
-.dot-tooltip {
+TOOLTIP .dot-tooltip {
   position: absolute;
   bottom: 130%;
   left: 50%;
@@ -2502,25 +2485,19 @@ body.dark-mode .switch-dark {
 
   opacity: 0;
   pointer-events: none;
-  /* 🔥 CORREÇÃO DO BUG */
-
   transition: 0.3s ease;
   z-index: 20;
 }
 
-/* MOSTRAR TOOLTIP */
 .timeline-dot:hover .dot-tooltip {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
 
-/* PERSONAGEM */
 .walking-character {
   position: absolute;
   bottom: 20%;
-  /* 🔥 NÃO FICA MAIS NA IMAGEM */
   left: 80%;
-  /* 🔥 COMEÇA NA DIREITA */
   transform: translateX(-50%) scale(0.25);
   transition: left 0.3s ease;
 
@@ -2528,8 +2505,7 @@ body.dark-mode .switch-dark {
   pointer-events: none;
 }
 
-/* ANIMAÇÃO DE ANDAR 🔥 */
-.walking {
+ANIMAÇÃO DE ANDAR 🔥 .walking {
   animation: walk 0.4s steps(2) infinite;
 }
 
@@ -2631,8 +2607,7 @@ body.dark-mode .switch-dark {
   }
 }
 
-/* Timeline Path */
-.timeline-path {
+Timeline Path .timeline-path {
   position: absolute;
   top: 50%;
   left: 5%;
@@ -2665,8 +2640,7 @@ body.dark-mode .switch-dark {
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
 }
 
-/* Timeline Dots */
-.timeline-dot {
+Timeline Dots .timeline-dot {
   position: relative;
   z-index: 5;
   cursor: pointer;
@@ -2717,8 +2691,7 @@ body.dark-mode .switch-dark {
   box-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.4);
 }
 
-/* Enhanced Tooltip */
-.dot-tooltip {
+Enhanced Tooltip .dot-tooltip {
   position: absolute;
   bottom: calc(100% + 20px);
   left: 50%;
@@ -2785,8 +2758,7 @@ body.dark-mode .switch-dark {
   pointer-events: auto;
 }
 
-/* Tooltip Header */
-.tooltip-header {
+Tooltip Header .tooltip-header {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2818,8 +2790,7 @@ body.dark-mode .switch-dark {
   color: #fff;
 }
 
-/* Tooltip Text */
-.tooltip-text {
+Tooltip Text .tooltip-text {
   padding: 12px 20px;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -2827,8 +2798,7 @@ body.dark-mode .switch-dark {
   margin: 0;
 }
 
-/* Tooltip Tag */
-.tooltip-tag {
+Tooltip Tag .tooltip-tag {
   display: inline-block;
   margin: 0 20px 16px;
   padding: 6px 14px;
@@ -2848,8 +2818,7 @@ body.dark-mode .switch-dark {
   color: #fff;
 }
 
-/* Adjust tooltip position for edge dots */
-.timeline-dot:first-child .dot-tooltip {
+Adjust tooltip position for edge dots .timeline-dot:first-child .dot-tooltip {
   left: 0;
   transform: translateX(0) translateY(15px) scale(0.95);
 }
@@ -2879,8 +2848,7 @@ body.dark-mode .switch-dark {
   transform: none;
 }
 
-/* Trajectory Hint */
-.trajectory-hint {
+Trajectory Hint .trajectory-hint {
   text-align: center;
   color: var(--text-light);
   font-size: 1.1rem;
@@ -2903,7 +2871,6 @@ body.dark-mode .switch-dark {
   }
 }
 
-/* Dark Mode - Trajectory */
 body.dark-mode .trajectory {
   background: var(--dark-card);
 }
@@ -2911,10 +2878,6 @@ body.dark-mode .trajectory {
 body.dark-mode .trajectory-hint {
   color: var(--gray-300);
 }
-
-/* ========================================
-   RESPONSIVE - NINTENDO SWITCH
-   ======================================== */
 
 @media (max-width: 900px) {
   .nintendo-switch {
@@ -3145,27 +3108,22 @@ body.dark-mode .trajectory-hint {
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.2rem;
-    /* 🔥 AUMENTEI */
+
   }
 
   .animacao.highlight span {
     font-size: 2rem;
-    /* 🔥 maior e bonito */
     white-space: normal;
   }
 }
 
-/* ========================= */
-/* 📱 CELULAR */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.8rem;
-    /* 🔥 NÃO deixa minúsculo */
   }
 
   .animacao.highlight span {
     font-size: 1.6rem;
-    /* 🔥 agora fica top */
     white-space: normal;
   }
 }
@@ -3176,9 +3134,6 @@ body.dark-mode .trajectory-hint {
   left: 0;
   --scale: 0.25;
   --dir: 1;
-  /* Mantém o estado da direção */
-
-  /* O segredo: usamos as variáveis para não perder o estado */
   transform: translateY(-50%) translateX(-50%) scale(var(--scale)) scaleX(var(--dir));
 
   transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s ease;
@@ -3197,22 +3152,19 @@ body.dark-mode .trajectory-hint {
   .skill-item {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    /* Remove aquele brilho azul ao tocar */
   }
 }
 
-/* Aplica o efeito de aumentar APENAS em computadores */
 @media (hover: hover) {
   .skill-item:hover {
     transform: scale(1.05);
-    /* Ou o valor que você estiver usando */
+
   }
 }
 
-/* No celular, você pode optar por um efeito mais sutil ou nenhum */
 @media (hover: none) {
   .skill-item:active {
     transform: scale(1);
-    /* Mantém o tamanho original ao tocar */
+
   }
 }
