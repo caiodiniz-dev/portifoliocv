@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateSocialTooltips(currentLanguage)
     })
   }
-  // Função para configurar o personagem e animação em ambos os modos (light e dark)
+
   function setupCharacterAnimation(characterId) {
 
     const character = document.getElementById(characterId)
@@ -358,11 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.addEventListener("mouseenter", () => {
         const newX = dot.offsetLeft + (dot.offsetWidth / 2)
 
-        // 🔥 DEFINE DIREÇÃO
         const direction = newX > currentX ? 1 : -1
         character.style.setProperty("--dir", direction)
 
-        // 🔥 VIRA O PERSONAGEM
+
         const computedStyle = getComputedStyle(character)
         const scale = computedStyle.getPropertyValue('--scale').trim()
 
@@ -372,15 +371,15 @@ document.addEventListener("DOMContentLoaded", () => {
           character.style.transform = `translateX(-50%) scale(${scale}) scaleX(-1)`
         }
 
-        // 🔥 ATIVA ANIMAÇÃO
+
         character.classList.add("walking")
 
         isMoving = true
 
-        // 🔥 MOVIMENTO SUAVE
+
         character.style.left = newX + "px"
 
-        // PARA ANIMAÇÃO DEPOIS
+
         setTimeout(() => {
           character.classList.remove("walking")
           isMoving = false
@@ -390,13 +389,12 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    // 🔥 COMEÇA NA DIREITA (fora da imagem)
     const startX = dots[dots.length - 1].offsetLeft
     currentX = startX
     character.style.left = startX + "px"
   }
 
-  // ATIVA NOS DOIS MODOS
+
   setupCharacterAnimation("character-light")
   setupCharacterAnimation("character-dark")
 
