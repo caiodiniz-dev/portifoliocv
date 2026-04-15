@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 :root {
@@ -21,7 +22,8 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
   line-height: 1.6;
   color: var(--text-dark);
   background: var(--white);
@@ -260,7 +262,9 @@ body.dark-mode .logo-dark {
 .animacao {
   display: inline-block;
   min-height: 6rem;
+  /* em vez de height */
   width: 100%;
+  /* nunca use largura fixa */
   overflow: hidden;
   vertical-align: middle;
 }
@@ -269,6 +273,7 @@ body.dark-mode .logo-dark {
   display: block;
   font-size: clamp(32px, 10vw, 72px);
   line-height: 1.1;
+  /* remove o 6rem fixo */
   animation: troca 8s infinite;
   white-space: nowrap;
 }
@@ -576,10 +581,15 @@ body.dark-mode .btn-cv-center:hover {
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  text-align: center;
+  max-width: 800px;
 }
 
 .about-description {
@@ -590,17 +600,24 @@ body.dark-mode .btn-cv-center:hover {
 }
 
 .about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
+  width: 100%;
 }
 
 .stat-item {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   background: var(--gray-50);
   border-radius: 12px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .stat-number {
@@ -983,6 +1000,22 @@ body.dark-mode .btn-cv-center:hover {
 
 .social-link[title="GitHub"]:hover {
   background: #333;
+}
+
+.social-link[title="LinkedIn"]:hover {
+  background: #0077b5;
+}
+
+.social-link[title="TikTok"]:hover {
+  background: #000;
+}
+
+.social-link[title="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-link[title="Youtube"]:hover {
+  background: #ff0000;
 }
 
 .testimonials-section {
@@ -1435,10 +1468,10 @@ body.dark-mode .form-label {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  text-align: center;
+  gap: 1.5rem;
 }
 
 .footer-links {
@@ -1830,8 +1863,25 @@ body.dark-mode .social-link:hover {
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+  }
+
+  .stat-item {
+    min-width: 140px;
+    flex: 1;
+    max-width: 180px;
+    padding: 1rem 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 
   .skills-grid {
@@ -1864,13 +1914,10 @@ body.dark-mode .social-link:hover {
     padding: 2rem 1.5rem;
   }
 
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .footer-links {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .animacao {
@@ -2003,7 +2050,7 @@ body.dark-mode .social-link:hover {
 
   .animacao span {
     line-height: 2.5rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -2359,11 +2406,16 @@ body.dark-mode .dot.active {
   .animacao span {
     font-size: 42px;
     white-space: normal;
+    /* permite quebrar se precisar */
   }
 }
 
+/* ========================================
+   TRAJECTORY SECTION - NINTENDO SWITCH
+   ======================================== */
+
 .trajectory {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: var(--gray-50);
 }
 
@@ -2371,7 +2423,7 @@ body.dark-mode .dot.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0;
+  margin: 1.5rem 0;
 }
 
 .nintendo-switch {
@@ -2381,12 +2433,13 @@ body.dark-mode .dot.active {
   width: 100%;
 }
 
-Hide dark switch by default .switch-dark {
+/* Hide dark switch by default */
+.switch-dark {
   display: none;
 }
 
-Show blue switch in light mode,
-purple in dark mode body.dark-mode .switch-light {
+/* Show blue switch in light mode, purple in dark mode */
+body.dark-mode .switch-light {
   display: none;
 }
 
@@ -2394,7 +2447,8 @@ body.dark-mode .switch-dark {
   display: block;
 }
 
-Switch Image .switch-image {
+/* Switch Image */
+.switch-image {
   width: 100%;
   height: auto;
   display: block;
@@ -2405,7 +2459,8 @@ Switch Image .switch-image {
   transform: scale(1.10);
 }
 
-Overlay for dots .switch-overlay {
+/* Overlay for dots */
+.switch-overlay {
   position: absolute;
   top: 15%;
   left: 20%;
@@ -2416,16 +2471,20 @@ Overlay for dots .switch-overlay {
   justify-content: center;
 }
 
-Walking Character .timeline-path {
+/* Walking Character */
+.timeline-path {
   position: relative;
+  /* MUITO IMPORTANTE */
 }
 
 .walking-character {
   position: absolute;
   top: calc(50% - 10px);
+  /* posicionado embaixo das bolinhas */
   left: 0;
-  transform: translateX(-50%) scale(0.25);
-  --scale: 0.25;
+  transform: translateX(-50%) scale(0.2);
+  --scale: 0.2;
+  /* tamanho um pouco maior */
   transform-origin: top center;
   transition: left 0.15s ease-out;
   z-index: 10;
@@ -2436,11 +2495,11 @@ Walking Character .timeline-path {
 
   0%,
   100% {
-    transform: translateX(-50%) scale(0.25) translateY(0);
+    transform: translateX(-50%) scale(0.2) translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) scale(0.25) translateY(-3px);
+    transform: translateX(-50%) scale(0.2) translateY(-3px);
   }
 }
 
@@ -2456,8 +2515,9 @@ Walking Character .timeline-path {
   position: absolute;
   top: calc(50% - 20px);
   left: 400px;
-  transform: translateX(-50%) scale(0.25);
-  transition: left 0.1s linear;
+  /* 👈 começa mais pra direita */
+  transform: translateX(-50%) scale(0.2);
+  transition: left 0.3s ease-out;
   z-index: 10;
 }
 
@@ -2477,7 +2537,8 @@ Walking Character .timeline-path {
   cursor: pointer;
 }
 
-TOOLTIP .dot-tooltip {
+/* TOOLTIP */
+.dot-tooltip {
   position: absolute;
   bottom: 130%;
   left: 50%;
@@ -2485,41 +2546,47 @@ TOOLTIP .dot-tooltip {
 
   opacity: 0;
   pointer-events: none;
+  /* 🔥 CORREÇÃO DO BUG */
+
   transition: 0.3s ease;
   z-index: 20;
 }
 
+/* MOSTRAR TOOLTIP */
 .timeline-dot:hover .dot-tooltip {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
 
+/* PERSONAGEM */
 .walking-character {
   position: absolute;
-  bottom: 20%;
-  left: 80%;
-  transform: translateX(-50%) scale(0.25);
+  bottom: 22%;
+  left: 8%;
+  /* 🔥 COMEÇA NO INÍCIO */
+  transform: translateX(-50%) scale(0.18);
   transition: left 0.3s ease;
 
   z-index: 15;
   pointer-events: none;
 }
 
-ANIMAÇÃO DE ANDAR 🔥 .walking {
-  animation: walk 0.4s steps(2) infinite;
+/* ANIMAÇÃO DE ANDAR 🔥 */
+.walking {
+  animation: walk 0.3s steps(2) infinite;
 }
 
 @keyframes walk {
   0% {
-    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(0);
+    transform: translateX(-50%) scale(0.2) scaleX(var(--dir, 1)) translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(-3px);
+    transform: translateX(-50%) scale(0.2) scaleX(var(--dir, 1)) translateY(-3px);
   }
 
   100% {
-    transform: translateX(-50%) scale(0.25) scaleX(var(--dir, 1)) translateY(0);
+    transform: translateX(-50%) scale(0.2) scaleX(var(--dir, 1)) translateY(0);
   }
 }
 
@@ -2607,7 +2674,8 @@ ANIMAÇÃO DE ANDAR 🔥 .walking {
   }
 }
 
-Timeline Path .timeline-path {
+/* Timeline Path */
+.timeline-path {
   position: absolute;
   top: 50%;
   left: 5%;
@@ -2640,7 +2708,8 @@ Timeline Path .timeline-path {
   box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
 }
 
-Timeline Dots .timeline-dot {
+/* Timeline Dots */
+.timeline-dot {
   position: relative;
   z-index: 5;
   cursor: pointer;
@@ -2691,7 +2760,8 @@ Timeline Dots .timeline-dot {
   box-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.4);
 }
 
-Enhanced Tooltip .dot-tooltip {
+/* Enhanced Tooltip */
+.dot-tooltip {
   position: absolute;
   bottom: calc(100% + 20px);
   left: 50%;
@@ -2758,7 +2828,8 @@ Enhanced Tooltip .dot-tooltip {
   pointer-events: auto;
 }
 
-Tooltip Header .tooltip-header {
+/* Tooltip Header */
+.tooltip-header {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2790,7 +2861,8 @@ Tooltip Header .tooltip-header {
   color: #fff;
 }
 
-Tooltip Text .tooltip-text {
+/* Tooltip Text */
+.tooltip-text {
   padding: 12px 20px;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -2798,7 +2870,8 @@ Tooltip Text .tooltip-text {
   margin: 0;
 }
 
-Tooltip Tag .tooltip-tag {
+/* Tooltip Tag */
+.tooltip-tag {
   display: inline-block;
   margin: 0 20px 16px;
   padding: 6px 14px;
@@ -2818,7 +2891,8 @@ Tooltip Tag .tooltip-tag {
   color: #fff;
 }
 
-Adjust tooltip position for edge dots .timeline-dot:first-child .dot-tooltip {
+/* Adjust tooltip position for edge dots */
+.timeline-dot:first-child .dot-tooltip {
   left: 0;
   transform: translateX(0) translateY(15px) scale(0.95);
 }
@@ -2848,12 +2922,15 @@ Adjust tooltip position for edge dots .timeline-dot:first-child .dot-tooltip {
   transform: none;
 }
 
-Trajectory Hint .trajectory-hint {
+/* Trajectory Hint */
+.trajectory-hint {
   text-align: center;
   color: var(--text-light);
-  font-size: 1.1rem;
-  margin-top: 2.5rem;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: 500;
+  font-style: italic;
   animation: pulse-hint 2s ease-in-out infinite;
 }
 
@@ -2871,6 +2948,7 @@ Trajectory Hint .trajectory-hint {
   }
 }
 
+/* Dark Mode - Trajectory */
 body.dark-mode .trajectory {
   background: var(--dark-card);
 }
@@ -2878,6 +2956,10 @@ body.dark-mode .trajectory {
 body.dark-mode .trajectory-hint {
   color: var(--gray-300);
 }
+
+/* ========================================
+   RESPONSIVE - NINTENDO SWITCH
+   ======================================== */
 
 @media (max-width: 900px) {
   .nintendo-switch {
@@ -3108,22 +3190,27 @@ body.dark-mode .trajectory-hint {
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.2rem;
-
+    /* 🔥 AUMENTEI */
   }
 
   .animacao.highlight span {
     font-size: 2rem;
+    /* 🔥 maior e bonito */
     white-space: normal;
   }
 }
 
+/* ========================= */
+/* 📱 CELULAR */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.8rem;
+    /* 🔥 NÃO deixa minúsculo */
   }
 
   .animacao.highlight span {
     font-size: 1.6rem;
+    /* 🔥 agora fica top */
     white-space: normal;
   }
 }
@@ -3134,6 +3221,9 @@ body.dark-mode .trajectory-hint {
   left: 0;
   --scale: 0.25;
   --dir: 1;
+  /* Mantém o estado da direção */
+
+  /* O segredo: usamos as variáveis para não perder o estado */
   transform: translateY(-50%) translateX(-50%) scale(var(--scale)) scaleX(var(--dir));
 
   transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s ease;
@@ -3152,19 +3242,195 @@ body.dark-mode .trajectory-hint {
   .skill-item {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    /* Remove aquele brilho azul ao tocar */
   }
 }
 
+/* Aplica o efeito de aumentar APENAS em computadores */
 @media (hover: hover) {
   .skill-item:hover {
     transform: scale(1.05);
-
+    /* Ou o valor que você estiver usando */
   }
 }
 
+/* No celular, você pode optar por um efeito mais sutil ou nenhum */
 @media (hover: none) {
   .skill-item:active {
     transform: scale(1);
+    /* Mantém o tamanho original ao tocar */
+  }
+}
 
+/* ========================================
+   SKILLS CAROUSEL INFINITO
+   ======================================== */
+
+.skills-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+}
+
+.skills-carousel {
+  width: 100%;
+  overflow: visible;
+  padding: 1.5rem 0;
+}
+
+.skills-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-carousel 30s linear infinite;
+  width: max-content;
+}
+
+.skills-carousel-container:hover .skills-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skill-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 80px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.skill-carousel-item i {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  transition: all 0.4s ease;
+}
+
+.skill-carousel-item span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all 0.4s ease;
+}
+
+.skill-carousel-item:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Cores específicas ao fazer hover */
+.skill-carousel-item:hover .fa-html5 {
+  color: #e34f26;
+}
+
+.skill-carousel-item:hover .fa-css3-alt {
+  color: #1572b6;
+}
+
+.skill-carousel-item:hover .fa-js-square {
+  color: #f7df1e;
+}
+
+.skill-carousel-item:hover .fa-react {
+  color: #61dafb;
+}
+
+.skill-carousel-item:hover .devicon-typescript-plain {
+  color: #3178c6;
+}
+
+.skill-carousel-item:hover .fa-node-js {
+  color: #339933;
+}
+
+.skill-carousel-item:hover .fa-database {
+  color: #00758f;
+}
+
+.skill-carousel-item:hover .fa-github {
+  color: #333;
+}
+
+.skill-carousel-item:hover .fa-git-alt {
+  color: #f05032;
+}
+
+.skill-carousel-item:hover .fa-globe {
+  color: #2563eb;
+}
+
+.skill-carousel-item:hover span {
+  color: var(--text-dark);
+}
+
+/* Dark mode */
+body.dark-mode .skill-carousel-item i {
+  color: var(--gray-300);
+}
+
+body.dark-mode .skill-carousel-item span {
+  color: var(--gray-400);
+}
+
+body.dark-mode .skill-carousel-item:hover .fa-github {
+  color: #f5f5f5;
+}
+
+body.dark-mode .skill-carousel-item:hover .fa-globe {
+  color: var(--purple);
+}
+
+body.dark-mode .skill-carousel-item:hover span {
+  color: var(--gray-100);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-track {
+    gap: 2rem;
+  }
+
+  .skill-carousel-item {
+    min-width: 60px;
+  }
+
+  .skill-carousel-item i {
+    font-size: 2rem;
+  }
+
+  .skill-carousel-item span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-carousel-container {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  .skills-track {
+    gap: 1.5rem;
+  }
+
+  .skill-carousel-item {
+    min-width: 50px;
+  }
+
+  .skill-carousel-item i {
+    font-size: 1.75rem;
   }
 }
